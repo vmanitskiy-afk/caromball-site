@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Caromball — бумажный футбол для iPhone</title>
+<title>Caromball — бумажный футбол для iPhone / paper soccer</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d2b1f'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23ffd24a' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234a90e2'/%3E%3C/svg%3E">
-<meta name="description" content="Caromball — бумажный футбол в клеточку для iPhone. Три уровня ИИ, онлайн-матчи через Game Center, игра вдвоём на одном устройстве.">
+<meta name="description" content="Caromball — paper soccer on iPhone. Three AI levels, online matches via Game Center, two-player on one device. / Бумажный футбол в клеточку для iPhone.">
 <style>
   :root{
     --bg:#1d2b1f; --surface:#243026; --surface-2:#3a4a3c;
@@ -47,57 +47,82 @@
   footer{text-align:center;color:var(--muted);font-size:14px;padding:40px 24px 64px;
     border-top:1px solid rgba(255,255,255,.06)}
   footer a{color:var(--muted)}
+  /* language switch */
+  .lang-switch{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:4px;
+    background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px}
+  .lang-switch button{background:none;border:none;color:var(--muted);font:inherit;
+    font-size:13px;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer}
+  .lang-switch button.active{background:var(--surface-2);color:var(--text)}
+  [data-lang="ru"] .en{display:none}
+  [data-lang="en"] .ru{display:none}
 </style>
 </head>
 <body>
+<div class="lang-switch">
+  <button type="button" data-set="ru">RU</button>
+  <button type="button" data-set="en">EN</button>
+</div>
+
 <header>
   <div class="wrap">
     <h1>CAROMBALL</h1>
-    <div class="tagline">Бумажный футбол</div>
-    <p class="lead">Та самая игра в клеточку из школьной тетради — теперь на iPhone.
-      Чистая стратегия без случайностей: три уровня ИИ и онлайн-матчи с друзьями.</p>
+    <div class="tagline"><span class="ru">Бумажный футбол</span><span class="en">Paper Soccer</span></div>
+    <p class="lead">
+      <span class="ru">Та самая игра в клеточку из школьной тетради — теперь на iPhone.
+        Чистая стратегия без случайностей: три уровня ИИ и онлайн-матчи с друзьями.</span>
+      <span class="en">The classic pen-and-paper grid game — now on iPhone.
+        Pure strategy with no randomness: three AI levels and online matches with friends.</span>
+    </p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
     <div class="shots">
-      <img src="img/menu.png" alt="Главное меню Caromball" loading="lazy">
-      <img src="img/game.png" alt="Игровое поле Caromball" loading="lazy">
-      <img src="img/difficulty.png" alt="Выбор уровня сложности" loading="lazy">
+      <img src="img/menu.png" alt="Caromball main menu" loading="lazy">
+      <img src="img/game.png" alt="Caromball game board" loading="lazy">
+      <img src="img/difficulty.png" alt="Difficulty selection" loading="lazy">
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Что внутри</h2>
+    <h2><span class="ru">Что внутри</span><span class="en">What's inside</span></h2>
     <div class="features">
       <div class="card">
-        <h3><span class="dot" style="background:var(--blue)"></span>Три уровня ИИ</h3>
-        <p>От новичка до соперника, который считает на пять ходов вперёд
-          и ловит в многоходовые ловушки.</p>
+        <h3><span class="dot" style="background:var(--blue)"></span><span class="ru">Три уровня ИИ</span><span class="en">Three AI levels</span></h3>
+        <p><span class="ru">От новичка до соперника, который считает на пять ходов вперёд
+          и ловит в многоходовые ловушки.</span>
+          <span class="en">From beginner to an opponent that plans five moves ahead
+          and sets multi-move traps.</span></p>
       </div>
       <div class="card">
-        <h3><span class="dot" style="background:var(--accent)"></span>Онлайн через Game Center</h3>
-        <p>Бросьте вызов другу и играйте по очереди в своём темпе.</p>
+        <h3><span class="dot" style="background:var(--accent)"></span><span class="ru">Онлайн через Game Center</span><span class="en">Online via Game Center</span></h3>
+        <p><span class="ru">Бросьте вызов другу и играйте по очереди в своём темпе.</span>
+          <span class="en">Challenge a friend and play turn by turn at your own pace.</span></p>
       </div>
       <div class="card">
-        <h3><span class="dot" style="background:var(--red)"></span>Игра вдвоём</h3>
-        <p>Передавайте iPhone друг другу — матч на одном устройстве.</p>
+        <h3><span class="dot" style="background:var(--red)"></span><span class="ru">Игра вдвоём</span><span class="en">Two players</span></h3>
+        <p><span class="ru">Передавайте iPhone друг другу — матч на одном устройстве.</span>
+          <span class="en">Pass the iPhone back and forth — a match on one device.</span></p>
       </div>
       <div class="card">
-        <h3><span class="dot" style="background:var(--blue)"></span>Механика комбо</h3>
-        <p>Отскок от линии или борта даёт бонусный ход — стройте цепочки
-          и забивайте оттуда, откуда не ждут.</p>
+        <h3><span class="dot" style="background:var(--blue)"></span><span class="ru">Механика комбо</span><span class="en">Combo mechanic</span></h3>
+        <p><span class="ru">Отскок от линии или борта даёт бонусный ход — стройте цепочки
+          и забивайте оттуда, откуда не ждут.</span>
+          <span class="en">A bounce off a line or wall grants a bonus move — build chains
+          and score from unexpected angles.</span></p>
       </div>
       <div class="card">
-        <h3><span class="dot" style="background:var(--accent)"></span>Без рекламы</h3>
-        <p>Никакой рекламы и доплат за уровни. Берите и играйте.</p>
+        <h3><span class="dot" style="background:var(--accent)"></span><span class="ru">Без рекламы</span><span class="en">No ads</span></h3>
+        <p><span class="ru">Никакой рекламы и доплат за уровни. Берите и играйте.</span>
+          <span class="en">No ads, no paywalls. Just pick it up and play.</span></p>
       </div>
       <div class="card">
-        <h3><span class="dot" style="background:var(--red)"></span>Работает оффлайн</h3>
-        <p>ИИ и игра вдвоём не требуют интернета.</p>
+        <h3><span class="dot" style="background:var(--red)"></span><span class="ru">Работает оффлайн</span><span class="en">Works offline</span></h3>
+        <p><span class="ru">ИИ и игра вдвоём не требуют интернета.</span>
+          <span class="en">AI and two-player modes need no internet.</span></p>
       </div>
     </div>
   </div>
@@ -105,28 +130,38 @@
 
 <section class="support" id="support">
   <div class="wrap">
-    <h2>Поддержка</h2>
-    <p>Нашли баг, есть вопрос или идея? Напишите — отвечаем.</p>
+    <h2><span class="ru">Поддержка</span><span class="en">Support</span></h2>
+    <p><span class="ru">Нашли баг, есть вопрос или идея? Напишите — отвечаем.</span>
+      <span class="en">Found a bug, have a question or an idea? Write to us — we reply.</span></p>
     <p style="margin-top:14px"><a class="mail" href="mailto:bobrikov1800@gmail.com">bobrikov1800@gmail.com</a></p>
 
     <div class="faq">
       <details>
-        <summary>Как играть в бумажный футбол?</summary>
-        <p>Ведите мяч по сетке к воротам соперника, проводя линии между узлами.
+        <summary><span class="ru">Как играть в бумажный футбол?</span><span class="en">How do I play paper soccer?</span></summary>
+        <p><span class="ru">Ведите мяч по сетке к воротам соперника, проводя линии между узлами.
           Если линия приходит в уже задействованный узел или в борт — вы получаете
           право на дополнительный ход (комбо). Гол засчитывается при заходе мяча
-          в ворота. Полные правила есть в самой игре на экране «Правила».</p>
+          в ворота. Полные правила есть в самой игре на экране «Правила».</span>
+          <span class="en">Move the ball across the grid toward your opponent's goal by drawing
+          lines between nodes. If a line lands on an already-used node or a wall, you get
+          a bonus move (combo). A goal counts when the ball enters the net. Full rules
+          are in the game on the "Rules" screen.</span></p>
       </details>
       <details>
-        <summary>Как сыграть с другом онлайн?</summary>
-        <p>Войдите в Game Center в настройках iPhone, затем в меню выберите
+        <summary><span class="ru">Как сыграть с другом онлайн?</span><span class="en">How do I play with a friend online?</span></summary>
+        <p><span class="ru">Войдите в Game Center в настройках iPhone, затем в меню выберите
           «Онлайн-матч» и пригласите соперника. Ходы передаются по очереди —
-          играть можно в своём темпе.</p>
+          играть можно в своём темпе.</span>
+          <span class="en">Sign in to Game Center in your iPhone settings, then choose
+          "Online match" in the menu and invite a friend. Turns are taken in order —
+          you can play at your own pace.</span></p>
       </details>
       <details>
-        <summary>Нужен ли интернет?</summary>
-        <p>Нет. Игра против ИИ и матч вдвоём на одном устройстве работают полностью
-          оффлайн. Интернет нужен только для онлайн-режима.</p>
+        <summary><span class="ru">Нужен ли интернет?</span><span class="en">Do I need an internet connection?</span></summary>
+        <p><span class="ru">Нет. Игра против ИИ и матч вдвоём на одном устройстве работают полностью
+          оффлайн. Интернет нужен только для онлайн-режима.</span>
+          <span class="en">No. Playing against the AI and two-player on one device work fully
+          offline. Internet is only needed for online mode.</span></p>
       </details>
     </div>
   </div>
@@ -134,8 +169,26 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Caromball · <a href="privacy.html">Политика конфиденциальности</a></p>
+    <p>© 2026 Caromball · <a href="privacy.html"><span class="ru">Политика конфиденциальности</span><span class="en">Privacy Policy</span></a></p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var saved = localStorage.getItem('cb_lang');
+  var lang = saved || ((navigator.language||'').toLowerCase().indexOf('ru')===0 ? 'ru' : 'en');
+  apply(lang);
+  document.querySelectorAll('.lang-switch button').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.dataset.set); localStorage.setItem('cb_lang', b.dataset.set); });
+  });
+  function apply(l){
+    document.documentElement.dataset.lang = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.set === l);
+    });
+  }
+})();
+</script>
 </body>
 </html>
